@@ -5,9 +5,9 @@
 #
 # thanks to the owner of X-tra-Telegram for tts fix
 #
-# Recode by @mrismanaziz
-# FROM Man-Userbot
-# t.me/SharingUserbot
+# Recode by VICKY @VckyouuBitch
+# Geez Projects
+# Geez Projects <https://github.com/vckyou/GeezProjects>
 #
 """ Userbot module containing various scrapers. """
 
@@ -179,7 +179,7 @@ async def carbon_api(e):
     await e.delete()  # Deleting msg
 
 
-@register(outgoing=True, pattern=r"^\.img (.*)")
+@register(outgoing=True, pattern=r"^\.image (.*)")
 async def img_sampler(event):
     """For .img command, search and return images matching the query."""
     await event.edit("`Sedang Mencari Gambar Yang Anda Cari...`")
@@ -635,7 +635,7 @@ def deEmojify(inputString):
     return get_emoji_regexp().sub("", inputString)
 
 
-@register(outgoing=True, pattern="^.rbg(?: |$)(.*)")
+@register(outgoing=True, pattern="^.removebg(?: |$)(.*)")
 async def kbg(remob):
     """For .rbg command, Remove Image Background."""
     if REM_BG_API_KEY is None:
@@ -660,7 +660,7 @@ async def kbg(remob):
                 output_file_name = await ReTrieveFile(downloaded_file_name)
                 os.remove(downloaded_file_name)
             else:
-                await remob.edit("`Bagaimana cara menghapus latar belakang ini ?`")
+                await remob.edit("`How do I remove this background?`")
         except Exception as e:
             await remob.edit(str(e))
             return
@@ -670,7 +670,7 @@ async def kbg(remob):
         )
         output_file_name = await ReTrieveURL(input_str)
     else:
-        await remob.edit("`Saya butuh sesuatu untuk menghapus latar belakang.`")
+        await remob.edit("`I need something to remove the background.`")
         return
     contentType = output_file_name.headers.get("content-type")
     if "image" in contentType:
@@ -679,7 +679,7 @@ async def kbg(remob):
             await remob.client.send_file(
                 remob.chat_id,
                 remove_bg_image,
-                caption="Support @SharingUserbot",
+                caption="Support @GeezSupportGroup",
                 force_document=True,
                 reply_to=message_id,
             )
@@ -1362,7 +1362,7 @@ async def capture(url):
 
 CMD_HELP.update(
     {
-        "tts": "**Plugin : **`tts`\
+        "tts": "**Modules : **`tts`\
         \n\n  •  **Syntax :** `.tts` <text/reply>\
         \n  •  **Function : **Menerjemahkan teks ke ucapan untuk bahasa yang disetel. \
         \n\n  •  **NOTE :** Gunakan .lang tts <kode bahasa> untuk menyetel bahasa untuk tr **(Bahasa Default adalah bahasa Indonesia)**\
@@ -1373,8 +1373,8 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "translate": "**Plugin : **`Terjemahan`\
-        \n\n  •  **Syntax :** `.tr` <text/reply>\
+        "translate": "**Modules : **`Terjemahan`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.tr` <text/reply>\
         \n  •  **Function : **Menerjemahkan teks ke bahasa yang disetel.\
         \n\n  •  **NOTE :** Gunakan .lang tr <kode bahasa> untuk menyetel bahasa untuk tr **(Bahasa Default adalah bahasa Indonesia)**\
     "
@@ -1384,12 +1384,12 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "paste": "**Plugin : **`paste`\
-        \n\n  •  **Syntax :** `.paste` <text/reply>\
+        "paste": "**Modules : **`paste`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.paste` <text/reply>\
         \n  •  **Function : **Buat paste atau url yang dipersingkat menggunakan dog in.\
-        \n\n  •  **Syntax :** `.getpaste` <text/reply>\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.getpaste` <text/reply>\
         \n  •  **Function : **Buat paste atau url yang dipersingkat menggunakan dog in.\
-        \n\n  •  **Syntax :** `.neko` <text/reply>\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.neko` <text/reply>\
         \n  •  **Function : **Buat paste atau url yang dipersingkat menggunakan dog in.\
     "
     }
@@ -1398,8 +1398,8 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "carbon": "**Plugin : **`carbon`\
-        \n\n  •  **Syntax :** `.carbon` <text/reply>\
+        "carbon": "**Modules : **`carbon`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.carbon` <text/reply>\
         \n  •  **Function : **Percantik kode Anda menggunakan carbon.now.sh\
         \n\n  •  **NOTE :** Gunakan .crblang <text> untuk menyetel bahasa kode Anda.\
     "
@@ -1409,8 +1409,8 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "removebg": "**Plugin : **`removebg`\
-        \n\n  •  **Syntax :** `.rbg` <Tautan ke Gambar> atau balas gambar apa pun (Peringatan: tidak berfungsi pada stiker.)\
+        "removebg": "**Modules : **`removebg`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.removebg` <Tautan ke Gambar> atau balas gambar apa pun (Peringatan: tidak berfungsi pada stiker.)\
         \n  •  **Function : **Menghapus latar belakang gambar, menggunakan API remove.bg\
     "
     }
@@ -1419,8 +1419,8 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "ocr": "**Plugin : **`ocr`\
-        \n\n  •  **Syntax :** `.ocr` <kode bahasa>\
+        "ocr": "**Modules : **`ocr`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.ocr` <kode bahasa>\
         \n  •  **Function : **Balas gambar atau stiker untuk mengekstrak teks media tersebut.\
     "
     }
@@ -1429,8 +1429,8 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "youtube": "**Plugin : **`youtube`\
-        \n\n  •  **Syntax :** `.yt` <jumlah> <query>\
+        "youtube": "**Modules : **`youtube`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.yt` <jumlah> <query>\
         \n  •  **Function : **Melakukan Pencarian YouTube. Dapat menentukan jumlah hasil yang dibutuhkan (default adalah 5)\
     "
     }
@@ -1439,8 +1439,8 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "google": "**Plugin : **`google`\
-        \n\n  •  **Syntax :** `.google` <query>\
+        "google": "**Modules : **`google`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.google` <query>\
         \n  •  **Function : **Melakukan pencarian di google.\
     "
     }
@@ -1449,8 +1449,8 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "wiki": "**Plugin : **`wiki`\
-        \n\n  •  **Syntax :** `.wiki` <query>\
+        "wiki": "**Modules : **`wiki`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.wiki` <query>\
         \n  •  **Function : **Melakukan pencarian di Wikipedia.\
     "
     }
@@ -1459,8 +1459,8 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "direct": "**Plugin : **`direct`\
-        \n\n  •  **Syntax :** `.direct` <url>\
+        "direct": "**Modules : **`direct`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.direct` <url>\
         \n  •  **Function : **Balas tautan atau tempel URL untuk membuat tautan unduhan langsung.\
         \n\n  •  **Supported URL :** `Google Drive` - `Cloud Mail` - `Yandex.Disk` - `AFH` - `ZippyShare` - `MediaFire` - `SourceForge` - `OSDN` - `GitHub`\
     "
@@ -1470,13 +1470,13 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "barcode": "**Plugin : **`barcode`\
-        \n\n  •  **Syntax :** `.barcode` <content>\
+        "barcode": "**Modules : **`barcode`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.barcode` <content>\
         \n  •  **Function :** Buat Kode Batang dari konten yang diberikan.\
-        \n\n  •  **Example :** `.barcode www.google.com`\
-        \n\n  •  **Syntax :** `.makeqr` <content>\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.barcode www.google.com`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.makeqr` <content>\
         \n  •  **Function :** Buat Kode QR dari konten yang diberikan.\
-        \n\n  •  **Example :** `.makeqr www.google.com`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.makeqr www.google.com`\
         \n\n  •  **NOTE :** Gunakan .decode <reply to barcode / qrcode> untuk mendapatkan konten yang didekodekan.\
     "
     }
@@ -1485,8 +1485,8 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "image_search": "**Plugin : **`image_search`\
-        \n\n  •  **Syntax :** `.img` <search_query>\
+        "image_search": "**Modules : **`image_search`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.img` <search_query>\
         \n  •  **Function : **Melakukan pencarian gambar di Google dan menampilkan 15 gambar.\
     "
     }
@@ -1495,10 +1495,10 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "ytdl": "**Plugin : **`ytdl`\
-        \n\n  •  **Syntax :** `.ytaudio` <url>\
+        "ytdl": "**Modules : **`ytdl`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.ytaudio` <url>\
         \n  •  **Function : **Untuk Mendownload lagu dari YouTube.\
-        \n\n  •  **Syntax :** `.ytvideo` <url>\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.ytvideo` <url>\
         \n  •  **Function : **Untuk Mendownload video dari YouTube.\
     "
     }
@@ -1507,10 +1507,10 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "screenshot": "**Plugin : **`screenshot`\
-        \n\n  •  **Syntax :** `.ss` <url>\
+        "screenshot": "**Modules : **`screenshot`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.ss` <url>\
         \n  •  **Function : **Mengambil tangkapan layar dari situs web dan mengirimkan tangkapan layar.\
-        \n  •  **Example  : .ss http://www.google.com\
+        \n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙  : .ss http://www.google.com\
     "
     }
 )
@@ -1518,8 +1518,8 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "currency": "**Plugin : **`currency`\
-        \n\n  •  **Syntax :** `.currency` <amount> <from> <to>\
+        "currency": "**Modules : **`currency`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.currency` <amount> <from> <to>\
         \n  •  **Function : **Mengonversi berbagai mata uang untuk Anda.\
     "
     }
@@ -1528,8 +1528,8 @@ CMD_HELP.update(
 
 CMD_HELP.update(
     {
-        "ud": "**Plugin : **`Urban Dictionary`\
-        \n\n  •  **Syntax :** `.ud` <query>\
+        "ud": "**Modules : **`Urban Dictionary`\
+        \n\n  •  **𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.ud` <query>\
         \n  •  **Function : **Melakukan pencarian di Urban Dictionary.\
     "
     }
